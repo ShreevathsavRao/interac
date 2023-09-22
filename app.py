@@ -11,6 +11,7 @@ from datetime import timedelta
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer,PorterStemmer
 from nltk.corpus import stopwords
+import nltk
 nltk.download('all')
 import re
 lemmatizer = WordNetLemmatizer()
