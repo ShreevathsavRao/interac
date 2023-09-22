@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Processor</title>
+</head>
+<body>
+    <h1>Input Processor</h1>
+    <div id="inputContainer">
+        <input type="text" id="input_field" placeholder="Enter a value">
+        <button onclick="processInput()">Process</button>
+    </div>
+
+    <div id="outputContainer" style="display: none;">
+        <h2>Output:</h2>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function processInput() {
+            const inputValue = document.getElementById("input_field").value;
+            const outputContainer = document.getElementById("outputContainer");
+            const output = document.getElementById("output");
+
+            if (inputValue.trim() === "") {
+                alert("Please enter a value.");
+                return;
+            }
+
+            fetch("/process", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ input_value: inputValue }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                output.textContent = data.output;
+                outputContainer.style.display = "block";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
+</body>
+</html>
