@@ -5,3 +5,4 @@ GoogleNews
 datetime
 vaderSentiment
 snowflake-connector-python
+nltk
