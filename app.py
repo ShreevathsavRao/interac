@@ -11,8 +11,6 @@ from datetime import timedelta
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer,PorterStemmer
 from nltk.corpus import stopwords
-import nltk
-nltk.download('all')
 import re
 lemmatizer = WordNetLemmatizer()
 stemmer = PorterStemmer() 
@@ -157,4 +155,4 @@ def process_input():
     return jsonify(error='Input value not provided'), 400
 
 if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0',port=8080)  # Change 8080 to the desired port number
+    app.run(debug=True,host=0.0.0.0,port=5000)
