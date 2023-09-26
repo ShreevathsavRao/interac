@@ -71,7 +71,7 @@ def views_prediction2(string):
 
 def process_input_value(input_value):
     event_price_time_qstring = 'select BUY_price,CREATED_DT from probo_analytics.tms_trade WHERE event_id={}'
-    event_name_desc_qstring = 'select NAMe,DESCRIPTION from probo_analytics.EVENTS WHERE ID={}'
+    event_name_desc_qstring = 'select NAME,DESCRIPTION from probo_analytics.EVENTS WHERE ID={}'
     print(input_value)
     event_price_time = views_prediction2(event_price_time_qstring.format(input_value))
     event_name_desc = views_prediction2(event_name_desc_qstring.format(input_value))
