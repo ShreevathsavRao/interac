@@ -3,6 +3,6 @@ pandas
 numpy
 GoogleNews
 datetime
+nltk
 vaderSentiment
 snowflake-connector-python
-nltk
